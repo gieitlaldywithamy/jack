@@ -1,9 +1,7 @@
-import { usePokemonContext } from "../PokemonContext";
+import { usePokemonStore } from "../pokemonZustandStore";
 
 export const PokemonInfo = () => {
-  const {
-    state: { selectedPokemon },
-  } = usePokemonContext();
+  const { selectedPokemon } = usePokemonStore();
 
   if (!selectedPokemon) {
     return null;
@@ -14,10 +12,10 @@ export const PokemonInfo = () => {
     base,
   } = selectedPokemon;
   return (
-    <div className="col-span-1">
-      <h1 className="font-semibold text-xxl">{english}</h1>
+    <div className="col-span-1 bg-white shadow-md rounded p-4">
+      <h2 className="text-lg font-semibold mb-2">{english}</h2>
       <h3>{type.join(", ")}</h3>
-      <table>
+      <table className="text-gray-700">
         <tbody>
           {Object.keys(base).map((ability) => (
             <tr key={ability}>

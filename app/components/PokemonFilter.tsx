@@ -1,17 +1,14 @@
-import { usePokemonContext } from "../PokemonContext";
+import { usePokemonStore } from "../pokemonZustandStore";
 
 export const PokemonFilter = () => {
-  const {
-    state: { filter },
-    dispatch,
-  } = usePokemonContext();
+  const { filter, setFilter } = usePokemonStore();
+
   return (
     <input
-      className="w-full text-lg"
+      className="mt-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
+      block w-full sm:text-sm border-gray-300 rounded-md"
       value={filter}
-      onChange={(evt) =>
-        dispatch({ type: "SET_FILTER", payload: evt.target.value })
-      }
+      onChange={(evt) => setFilter(evt.target.value)}
     />
   );
 };

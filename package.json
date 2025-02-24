@@ -15,12 +15,15 @@
     "@fontsource/roboto": "^5.1.1",
     "@mui/material": "^6.4.5",
     "@mui/styled-engine-sc": "^6.4.3",
+    "@reduxjs/toolkit": "^2.6.0",
     "i": "^0.3.7",
     "next": "15.1.7",
     "npm": "^11.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "styled-components": "^6.1.15"
+    "react-redux": "^9.2.0",
+    "styled-components": "^6.1.15",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

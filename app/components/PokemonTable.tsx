@@ -1,13 +1,11 @@
 import { PokemonRow } from "./PokemonRow";
-import { usePokemonContext } from "../PokemonContext";
 import { useMemo } from "react";
+import { useGetPokemon } from "../useGetPokemon";
+import { usePokemonStore } from "../pokemonZustandStore";
 
 export const PokemonTable = () => {
-  const {
-    pokemons: unfilteredPokemons,
-    state: { filter },
-  } = usePokemonContext();
-
+  const { pokemons: unfilteredPokemons } = useGetPokemon();
+  const { filter } = usePokemonStore();
   const pokemons = useMemo(() => {
     if (filter?.length === 0) {
       return unfilteredPokemons;
@@ -28,7 +26,7 @@ export const PokemonTable = () => {
   return (
     <table className="col-span-2 border rounded-sm">
       <thead>
-        <tr>
+        <tr className="bg-gray-200">
           <th>Name</th>
           <th>Type</th>
         </tr>
